@@ -244,10 +244,15 @@ a {
   gap: 0.15rem;
 }
 
-.nav-dropdown[open] .nav-dropdown-menu,
-.nav-dropdown:hover .nav-dropdown-menu,
-.nav-dropdown:focus-within .nav-dropdown-menu {
+.nav-dropdown[open] .nav-dropdown-menu {
   display: grid;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu {
+    display: grid;
+  }
 }
 
 .nav-dropdown-link {
@@ -1102,9 +1107,7 @@ select:focus {
     background: rgba(255, 255, 255, 0.04);
     box-shadow: none;
   }
-  .nav-dropdown[open] .nav-dropdown-menu,
-  .nav-dropdown:hover .nav-dropdown-menu,
-  .nav-dropdown:focus-within .nav-dropdown-menu {
+  .nav-dropdown[open] .nav-dropdown-menu {
     display: grid;
   }
   .video-actions {

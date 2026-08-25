@@ -30,6 +30,29 @@ function initNavDropdown() {
   const dropdowns = document.querySelectorAll(".nav-dropdown");
   if (!dropdowns.length) return;
 
+  const isTouchNav = () =>
+    window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
+  dropdowns.forEach((dropdown) => {
+    if (!(dropdown instanceof HTMLDetailsElement)) return;
+    const summary = dropdown.querySelector("summary");
+    if (!(summary instanceof HTMLElement)) return;
+
+    // Sur tactile, le 1er tap active souvent :hover sans ouvrir <details>.
+    // On force l’ouverture/fermeture au premier appui.
+    summary.addEventListener("click", (e) => {
+      if (!isTouchNav()) return;
+      e.preventDefault();
+      const willOpen = !dropdown.open;
+      dropdowns.forEach((other) => {
+        if (other instanceof HTMLDetailsElement && other !== dropdown) {
+          other.open = false;
+        }
+      });
+      dropdown.open = willOpen;
+    });
+  });
+
   document.addEventListener("click", (e) => {
     const t = e.target;
     if (t instanceof HTMLElement && t.closest(".nav-dropdown")) return;
