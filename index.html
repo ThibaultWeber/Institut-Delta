@@ -47,7 +47,7 @@
     <link rel="preload" as="image" href="./images/Banniere.webp" type="image/webp" />
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32.png" />
     <link rel="apple-touch-icon" href="./images/apple-touch-icon.png" />
-    <link rel="stylesheet" href="./css/styles.css?v=9" />
+    <link rel="stylesheet" href="./css/styles.css?v=11" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -215,11 +215,15 @@
           </div>
 
           <div class="video-card" role="group" aria-label="Vidéo immersive du parcours">
-            <div class="video-placeholder">
-              <span class="video-badge">Vidéo immersive du parcours</span>
-              <p class="muted">
-                Ajoutez ici votre lien YouTube/Vimeo. (On peut intégrer la vidéo dès que vous avez l’URL.)
-              </p>
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/DnJLGuI0BVo?rel=0"
+                title="Vidéo immersive du parcours — Institut Delta"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
             </div>
             <div class="video-actions">
               <a class="btn btn-primary" href="./contact.html">Demander des infos</a>
