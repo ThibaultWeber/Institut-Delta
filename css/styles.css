@@ -915,6 +915,10 @@ h1 {
   gap: 1rem;
   align-items: start;
 }
+.parcours-layout--single {
+  grid-template-columns: 1fr;
+  max-width: 720px;
+}
 
 .parcours-detail {
   height: auto;
@@ -953,6 +957,53 @@ h1 {
 .parcours-links a:hover {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.14);
+}
+.parcours-aside--end .parcours-links {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.04);
+  -webkit-overflow-scrolling: touch;
+}
+.data-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.data-table th,
+.data-table td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.data-table thead th {
+  background: rgba(18, 42, 88, 0.72);
+  color: rgba(242, 207, 99, 0.95);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.data-table tbody th {
+  font-weight: 750;
+  color: var(--white);
+  white-space: nowrap;
+  background: transparent;
+}
+.data-table tbody tr:last-child th,
+.data-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.table-note {
+  margin: 0.9rem 0 0;
+  max-width: 84ch;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.68);
+  font-style: italic;
 }
 
 .contact-grid {
@@ -1099,6 +1150,9 @@ select:focus {
     min-height: 260px;
   }
   .parcours-layout {
+    grid-template-columns: 1fr;
+  }
+  .parcours-aside--end .parcours-links {
     grid-template-columns: 1fr;
   }
   .nav-dropdown-menu {
