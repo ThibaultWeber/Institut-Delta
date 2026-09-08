@@ -1005,6 +1005,11 @@ h1 {
   color: rgba(255, 255, 255, 0.68);
   font-style: italic;
 }
+.page-concours .lead,
+.page-concours .section-head,
+.page-concours .table-note {
+  max-width: none;
+}
 
 .contact-grid {
   align-items: start;
