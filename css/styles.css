@@ -626,6 +626,48 @@ h1 {
   font-size: 0.95rem;
 }
 
+.billing-toggle-wrap {
+  display: grid;
+  justify-items: center;
+  gap: 0.55rem;
+  margin: 0 0 1.4rem;
+}
+.billing-toggle {
+  display: inline-flex;
+  padding: 0.28rem;
+  gap: 0.2rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.billing-toggle-btn {
+  appearance: none;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.84);
+  font: inherit;
+  font-weight: 700;
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 180ms ease, color 180ms ease;
+}
+.billing-toggle-btn.is-active {
+  background: linear-gradient(180deg, rgba(242, 207, 99, 0.96), rgba(230, 190, 61, 0.96));
+  color: var(--navy-900);
+}
+.billing-toggle-btn:focus-visible {
+  outline: 2px solid var(--yellow-500);
+  outline-offset: 2px;
+}
+.billing-hint {
+  margin: 0;
+  text-align: center;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.70);
+}
+
 .note {
   margin-top: 1rem;
   border-radius: var(--radius);

@@ -75,6 +75,81 @@ function initFooterYear() {
   year.textContent = String(new Date().getFullYear());
 }
 
+function initBillingToggle() {
+  const group = document.querySelector(".billing-toggle");
+  if (!(group instanceof HTMLElement)) return;
+
+  const buttons = [...group.querySelectorAll("[data-billing]")].filter(
+    (el) => el instanceof HTMLButtonElement
+  );
+  const cards = document.querySelectorAll("[data-price-monthly]");
+  if (!buttons.length || !cards.length) return;
+
+  const formatEuro = (value) =>
+    `${value.toLocaleString("fr-FR", { maximumFractionDigits: 0 })} €`;
+
+  const setBilling = (mode) => {
+    const yearly = mode === "yearly";
+
+    buttons.forEach((btn) => {
+      const active = btn.getAttribute("data-billing") === mode;
+      btn.classList.toggle("is-active", active);
+      btn.setAttribute("aria-checked", String(active));
+      btn.tabIndex = active ? 0 : -1;
+    });
+
+    cards.forEach((card) => {
+      if (!(card instanceof HTMLElement)) return;
+      const monthly = Number(card.getAttribute("data-price-monthly"));
+      if (!Number.isFinite(monthly)) return;
+
+      const amount = card.querySelector("[data-price-amount]");
+      const period = card.querySelector("[data-price-period]");
+      const note = card.querySelector("[data-price-note]");
+      if (!(amount instanceof HTMLElement)) return;
+      if (!(period instanceof HTMLElement)) return;
+      if (!(note instanceof HTMLElement)) return;
+
+      if (yearly) {
+        const yearlyPrice = monthly * 10;
+        const equiv = (yearlyPrice / 12).toLocaleString("fr-FR", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        });
+        amount.textContent = formatEuro(yearlyPrice);
+        period.textContent = " / an";
+        note.textContent = `soit ${equiv} € / mois · paiement en une fois`;
+      } else {
+        amount.textContent = formatEuro(monthly);
+        period.textContent = " / mois";
+        note.textContent = "Sans engagement";
+      }
+    });
+  };
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const mode = btn.getAttribute("data-billing");
+      if (mode === "monthly" || mode === "yearly") setBilling(mode);
+    });
+  });
+
+  group.addEventListener("keydown", (e) => {
+    if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+    e.preventDefault();
+    const current = buttons.findIndex((btn) => btn.getAttribute("aria-checked") === "true");
+    const delta = e.key === "ArrowRight" ? 1 : -1;
+    const next = buttons[(current + delta + buttons.length) % buttons.length];
+    const mode = next.getAttribute("data-billing");
+    if (mode === "monthly" || mode === "yearly") {
+      setBilling(mode);
+      next.focus();
+    }
+  });
+
+  setBilling("monthly");
+}
+
 function initAnalytics() {
   const cfg = window.DELTA_ANALYTICS;
   if (!cfg?.enabled) return;
@@ -405,6 +480,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileNav();
   initNavDropdown();
   initFooterYear();
+  initBillingToggle();
   initFaqAccordion();
   initContactForm();
 });

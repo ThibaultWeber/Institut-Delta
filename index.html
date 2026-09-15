@@ -47,7 +47,7 @@
     <link rel="preload" as="image" href="./images/Banniere.webp" type="image/webp" />
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32.png" />
     <link rel="apple-touch-icon" href="./images/apple-touch-icon.png" />
-    <link rel="stylesheet" href="./css/styles.css?v=13" />
+    <link rel="stylesheet" href="./css/styles.css?v=15" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -85,7 +85,7 @@
       }
     </script>
     <script defer src="./js/analytics-config.js"></script>
-    <script defer src="./js/main.js?v=6"></script>
+    <script defer src="./js/main.js?v=7"></script>
   </head>
   <body>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -235,57 +235,81 @@
             <p>Choisissez selon la spécialité ou l’objectif visé.</p>
           </div>
 
+          <div class="billing-toggle-wrap">
+            <div class="billing-toggle" role="radiogroup" aria-label="Périodicité des tarifs">
+              <button
+                type="button"
+                class="billing-toggle-btn is-active"
+                role="radio"
+                aria-checked="true"
+                data-billing="monthly"
+              >
+                Mensuel
+              </button>
+              <button
+                type="button"
+                class="billing-toggle-btn"
+                role="radio"
+                aria-checked="false"
+                data-billing="yearly"
+              >
+                Annuel
+              </button>
+            </div>
+            <p class="billing-hint">Annuel : 10 mois payés = 12 mois, paiement en une fois.</p>
+          </div>
+
           <div class="grid grid-2 pricing pricing--compact">
-            <article class="price-card price-card--compact">
+            <article class="price-card price-card--compact" data-price-monthly="19">
               <div class="price-head">
                 <h3>Terminale – Spécialité Maths</h3>
                 <p class="price-sub">Renforcer la spécialité maths, méthode et automatismes.</p>
               </div>
               <div class="price-row">
-                <p class="price"><strong>19 €</strong> / mois</p>
-                <p class="price-note">Sans engagement</p>
+                <p class="price"><strong data-price-amount>19 €</strong><span data-price-period> / mois</span></p>
+                <p class="price-note" data-price-note>Sans engagement</p>
               </div>
               <div class="price-actions">
                 <a class="btn btn-primary" href="./parcours/terminale-maths.html">En savoir plus</a>
               </div>
             </article>
 
-            <article class="price-card price-card--compact">
+            <article class="price-card price-card--compact" data-price-monthly="19">
               <div class="price-head">
                 <h3>Terminale – Spécialité Physique-Chimie</h3>
                 <p class="price-sub">Maîtriser la spécialité physique-chimie sur l’année.</p>
               </div>
               <div class="price-row">
-                <p class="price"><strong>19 €</strong> / mois</p>
-                <p class="price-note">Sans engagement</p>
+                <p class="price"><strong data-price-amount>19 €</strong><span data-price-period> / mois</span></p>
+                <p class="price-note" data-price-note>Sans engagement</p>
               </div>
               <div class="price-actions">
                 <a class="btn btn-primary" href="./parcours/terminale-physique-chimie.html">En savoir plus</a>
               </div>
             </article>
 
-            <article class="price-card price-card--compact">
+            <article class="price-card price-card--compact" data-price-monthly="29">
               <div class="price-head">
                 <h3>Terminale – Réussite Bac</h3>
                 <p class="price-sub">Maths et physique-chimie incluses — préparation bac complète.</p>
               </div>
               <div class="price-row">
-                <p class="price"><strong>29 €</strong> / mois</p>
-                <p class="price-note">Sans engagement</p>
+                <p class="price"><strong data-price-amount>29 €</strong><span data-price-period> / mois</span></p>
+                <p class="price-note" data-price-note>Sans engagement</p>
               </div>
               <div class="price-actions">
                 <a class="btn btn-primary" href="./parcours/reussite-bac.html">En savoir plus</a>
               </div>
             </article>
 
-            <article class="price-card price-card--compact price-card--featured">
+            <article class="price-card price-card--compact price-card--featured" data-price-monthly="39">
               <div class="price-head">
                 <h3>Ingénieur – Préparation Concours Post-Bac</h3>
                 <p class="price-sub">Concours post-bac, avec préparation aux QCM de l’écrit.</p>
               </div>
               <div class="price-row">
-                <p class="price"><strong>39 €</strong> / mois</p>
-                <p class="price-note">Sans engagement</p>
+                <p class="price"><strong data-price-amount>39 €</strong><span data-price-period> / mois</span></p>
+                <p class="price-note" data-price-note>Sans engagement</p>
               </div>
               <div class="price-actions">
                 <a class="btn btn-primary" href="./parcours/concours-ingenieur.html">En savoir plus</a>
