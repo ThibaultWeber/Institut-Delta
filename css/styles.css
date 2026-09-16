@@ -38,6 +38,26 @@ html {
   html {
     scroll-behavior: auto;
   }
+  .card:hover,
+  .feature:hover,
+  .price-card:hover,
+  .quote:hover,
+  .contact-card:hover,
+  .video-card:hover,
+  .hero-card:hover,
+  .kpi:hover,
+  .faq-item:hover,
+  .sante-card:hover,
+  .cta-inner:hover,
+  .callout:hover,
+  .note:hover,
+  .parcours-aside:hover,
+  .content-stat:hover,
+  .info-list li:hover,
+  .parcours-links a:hover,
+  .team-media:hover {
+    transform: none;
+  }
 }
 
 body {
@@ -420,6 +440,12 @@ h1 {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.05));
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: var(--shadow);
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+.hero-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.28);
 }
 
 .hero-banner {
@@ -517,7 +543,14 @@ h1 {
 .feature:hover,
 .price-card:hover,
 .quote:hover,
-.contact-card:hover {
+.contact-card:hover,
+.video-card:hover,
+.kpi:hover,
+.faq-item:hover,
+.note:hover,
+.parcours-aside:hover,
+.content-stat:hover,
+.info-list li:hover {
   transform: translateY(-3px);
   border-color: rgba(255, 255, 255, 0.16);
   background: rgba(255, 255, 255, 0.08);
@@ -543,6 +576,12 @@ h1 {
   border: 1px solid rgba(242, 207, 99, 0.22);
   background: rgba(18, 42, 88, 0.45);
   color: rgba(255, 255, 255, 0.88);
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+.callout:hover {
+  transform: translateY(-3px);
+  border-color: rgba(242, 207, 99, 0.38);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.28);
 }
 .callout p {
   margin: 0;
@@ -562,6 +601,7 @@ h1 {
   grid-template-columns: 28px 1fr;
   gap: 0.65rem;
   align-items: center;
+  transition: transform 200ms ease, border-color 200ms ease, background 200ms ease, box-shadow 200ms ease;
 }
 .kpi-main {
   font-weight: 900;
@@ -675,6 +715,7 @@ h1 {
   border: 1px solid rgba(255, 255, 255, 0.10);
   background: rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.84);
+  transition: transform 200ms ease, border-color 200ms ease, background 200ms ease, box-shadow 200ms ease;
 }
 .note p {
   margin: 0;
@@ -833,6 +874,7 @@ h1 {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.10);
   padding: 0.2rem;
+  transition: transform 200ms ease, border-color 200ms ease, background 200ms ease, box-shadow 200ms ease;
 }
 .faq-item summary {
   cursor: pointer;
@@ -874,6 +916,12 @@ h1 {
   grid-template-columns: 1.1fr 0.9fr;
   gap: 1.2rem;
   align-items: center;
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+.cta-inner:hover {
+  transform: translateY(-3px);
+  border-color: rgba(242, 207, 99, 0.38);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.28);
 }
 .cta-inner h2 {
   margin: 0 0 0.35rem;
@@ -902,6 +950,12 @@ h1 {
   grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.85fr);
   gap: 1.35rem;
   align-items: stretch;
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+.sante-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(242, 207, 99, 0.38);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.28);
 }
 .sante-copy h2 {
   margin: 0.7rem 0 0.85rem;
@@ -988,6 +1042,135 @@ h1 {
   margin: 0;
   color: rgba(255, 255, 255, 0.72);
 }
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.28rem 0.42rem;
+  margin: 0.2rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.5);
+}
+.footer-legal a {
+  color: rgba(255, 255, 255, 0.52);
+  text-decoration: none;
+}
+.footer-legal a:hover,
+.footer-legal a:focus-visible {
+  color: rgba(255, 255, 255, 0.86);
+  text-decoration: underline;
+  text-decoration-color: rgba(242, 207, 99, 0.4);
+  text-underline-offset: 2px;
+}
+.footer-legal-sep {
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.page-legal .lead {
+  max-width: 70ch;
+}
+.legal-doc {
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.98rem;
+}
+.legal-doc h2 {
+  margin: 2.1rem 0 0.7rem;
+  font-size: 1.22rem;
+  letter-spacing: 0.01em;
+}
+.legal-doc h3 {
+  margin: 1.45rem 0 0.45rem;
+  font-size: 1.04rem;
+}
+.legal-doc p,
+.legal-doc li {
+  color: rgba(255, 255, 255, 0.82);
+}
+.legal-doc a {
+  color: rgba(255, 255, 255, 0.94);
+  text-decoration: underline;
+  text-decoration-color: rgba(242, 207, 99, 0.4);
+  text-underline-offset: 3px;
+}
+.legal-doc a:hover {
+  text-decoration-color: rgba(242, 207, 99, 0.85);
+}
+.legal-doc ul,
+.legal-doc ol {
+  padding-left: 1.2rem;
+}
+.legal-doc li + li {
+  margin-top: 0.28rem;
+}
+.legal-meta {
+  margin: 0 0 1.4rem;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.92rem;
+}
+.legal-block {
+  margin: 0.85rem 0 1.1rem;
+}
+.legal-table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0 1.45rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+}
+.legal-doc table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+.legal-doc th,
+.legal-doc td {
+  text-align: left;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  vertical-align: top;
+}
+.legal-doc th {
+  background: rgba(255, 255, 255, 0.06);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.legal-doc tr:last-child td {
+  border-bottom: 0;
+}
+.legal-box {
+  margin: 1.25rem 0 1.5rem;
+  padding: 1.15rem 1.2rem;
+  border: 2px solid rgba(242, 207, 99, 0.55);
+  border-radius: 14px;
+  background: rgba(7, 18, 37, 0.48);
+}
+.legal-box h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.02rem;
+}
+.legal-box p:last-child,
+.legal-box ul:last-child,
+.legal-box ol:last-child {
+  margin-bottom: 0;
+}
+.legal-form {
+  margin: 1.25rem 0;
+  padding: 1.15rem 1.2rem;
+  border: 1px dashed rgba(255, 255, 255, 0.22);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+}
+.legal-form p {
+  margin: 0.35rem 0 0.7rem;
+}
+.legal-blank {
+  display: block;
+  margin: 0.15rem 0 0.95rem;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.35);
+  min-height: 1.45em;
+}
 
 .page-hero {
   padding: 2.3rem 0 1.2rem;
@@ -1022,6 +1205,7 @@ h1 {
   padding: 0.7rem 0.8rem;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.10);
+  transition: transform 200ms ease, border-color 200ms ease, background 200ms ease, box-shadow 200ms ease;
 }
 .content-stat strong {
   display: block;
@@ -1043,6 +1227,7 @@ h1 {
   padding: 1.15rem 1.2rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.10);
+  transition: transform 200ms ease, border-color 200ms ease, background 200ms ease, box-shadow 200ms ease;
 }
 
 .parcours-aside h2 {
@@ -1065,12 +1250,14 @@ h1 {
   color: rgba(255, 255, 255, 0.88);
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: background 180ms ease, border-color 180ms ease;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
 .parcours-links a:hover {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
 }
 .parcours-aside--end .parcours-links {
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1197,6 +1384,7 @@ select:focus {
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.10);
   background: rgba(255, 255, 255, 0.04);
+  transition: transform 200ms ease, border-color 200ms ease, background 200ms ease, box-shadow 200ms ease;
 }
 
 /* Ligne d'information sans libellé (ex: texte sur 2 lignes) */
