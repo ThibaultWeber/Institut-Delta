@@ -737,7 +737,7 @@ h1 {
 
 .video-card {
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem;
   width: 100%;
   max-width: 720px;
   margin: 0 auto 1rem;
